@@ -1,0 +1,243 @@
+version 3
+run topologia5-0-20250812-18:46:09-8844
+attr configname topologia5
+attr datetime 20250812-18:46:09
+attr datetimef 20250812-184609
+attr experiment topologia5
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network prova.simulations.RedeTopologia5
+attr processid 8844
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network prova.simulations.RedeTopologia5
+config sim-time-limit 40s
+config sim-time-limit 30s
+config **.vector-recording true
+config **.scalar-recording true
+config **.no0.isStarter true
+
+par RedeTopologia5.no0.portas$o[0].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no0.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia5.no0.portas$o[0].channel delay 0.00593932s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no1.portas$o[0].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no1.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia5.no1.portas$o[0].channel delay 0.0063356s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no0.portas$o[1].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no0.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia5.no0.portas$o[1].channel delay 0.0074367s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no2.portas$o[0].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no2.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia5.no2.portas$o[0].channel delay 0.00859839s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no1.portas$o[1].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no1.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia5.no1.portas$o[1].channel delay 0.00642487s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no3.portas$o[0].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no3.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia5.no3.portas$o[0].channel delay 0.00872151s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no1.portas$o[2].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no1.portas$o[2].channel disabled false
+attr mutable ""
+par RedeTopologia5.no1.portas$o[2].channel delay 0.00590395s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no4.portas$o[0].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no4.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia5.no4.portas$o[0].channel delay 0.00862527s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no2.portas$o[1].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no2.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia5.no2.portas$o[1].channel delay 0.00481289s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no5.portas$o[0].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no5.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia5.no5.portas$o[0].channel delay 0.00661207s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no2.portas$o[2].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no2.portas$o[2].channel disabled false
+attr mutable ""
+par RedeTopologia5.no2.portas$o[2].channel delay 0.00681305s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no6.portas$o[0].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no6.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia5.no6.portas$o[0].channel delay 0.00445944s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no3.portas$o[1].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no3.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia5.no3.portas$o[1].channel delay 0.00493828s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no7.portas$o[0].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no7.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia5.no7.portas$o[0].channel delay 0.00367781s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no4.portas$o[1].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no4.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia5.no4.portas$o[1].channel delay 0.00902596s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no7.portas$o[1].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no7.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia5.no7.portas$o[1].channel delay 0.00151042s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no5.portas$o[1].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no5.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia5.no5.portas$o[1].channel delay 0.00967296s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no7.portas$o[2].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no7.portas$o[2].channel disabled false
+attr mutable ""
+par RedeTopologia5.no7.portas$o[2].channel delay 0.00345391s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no6.portas$o[1].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no6.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia5.no6.portas$o[1].channel delay 0.00445097s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no7.portas$o[3].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no7.portas$o[3].channel disabled false
+attr mutable ""
+par RedeTopologia5.no7.portas$o[3].channel delay 0.00529899s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no0.portas$o[2].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no0.portas$o[2].channel disabled false
+attr mutable ""
+par RedeTopologia5.no0.portas$o[2].channel delay 0.00812553s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no7.portas$o[4].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no7.portas$o[4].channel disabled false
+attr mutable ""
+par RedeTopologia5.no7.portas$o[4].channel delay 0.00830952s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no1.portas$o[3].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no1.portas$o[3].channel disabled false
+attr mutable ""
+par RedeTopologia5.no1.portas$o[3].channel delay 0.00576005s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no2.portas$o[3].channel typename "\"ned.DelayChannel\""
+par RedeTopologia5.no2.portas$o[3].channel disabled false
+attr mutable ""
+par RedeTopologia5.no2.portas$o[3].channel delay 0.00531979s
+attr mutable ""
+attr unit s
+par RedeTopologia5.no0 typename "\"prova.src.Roteador\""
+par RedeTopologia5.no0 isStarter true
+scalar RedeTopologia5.no0 mensagens_enviadas 12
+scalar RedeTopologia5.no0 mensagens_recebidas 10
+scalar RedeTopologia5.no0 tempo_convergencia 0.02171554162
+scalar RedeTopologia5.no0 convergiu 1
+scalar RedeTopologia5.no0 destinos_conhecidos 8
+scalar RedeTopologia5.no0 fase_final 4
+scalar RedeTopologia5.no0 relogio_global_final 0.032651863275
+par RedeTopologia5.no1 typename "\"prova.src.Roteador\""
+par RedeTopologia5.no1 isStarter false
+scalar RedeTopologia5.no1 mensagens_enviadas 12
+scalar RedeTopologia5.no1 mensagens_recebidas 11
+scalar RedeTopologia5.no1 tempo_convergencia 0.018436944466
+scalar RedeTopologia5.no1 convergiu 1
+scalar RedeTopologia5.no1 destinos_conhecidos 8
+scalar RedeTopologia5.no1 fase_final 3
+scalar RedeTopologia5.no1 relogio_global_final 0.028884186861
+par RedeTopologia5.no2 typename "\"prova.src.Roteador\""
+par RedeTopologia5.no2 isStarter false
+scalar RedeTopologia5.no2 mensagens_enviadas 12
+scalar RedeTopologia5.no2 mensagens_recebidas 11
+scalar RedeTopologia5.no2 tempo_convergencia 0.017379821453
+scalar RedeTopologia5.no2 convergiu 1
+scalar RedeTopologia5.no2 destinos_conhecidos 8
+scalar RedeTopologia5.no2 fase_final 3
+scalar RedeTopologia5.no2 relogio_global_final 0.031965347259
+par RedeTopologia5.no3 typename "\"prova.src.Roteador\""
+par RedeTopologia5.no3 isStarter false
+scalar RedeTopologia5.no3 mensagens_enviadas 4
+scalar RedeTopologia5.no3 mensagens_recebidas 7
+scalar RedeTopologia5.no3 tempo_convergencia 0.017483782386
+scalar RedeTopologia5.no3 convergiu 1
+scalar RedeTopologia5.no3 destinos_conhecidos 8
+scalar RedeTopologia5.no3 fase_final 2
+scalar RedeTopologia5.no3 relogio_global_final 0.032630163298
+par RedeTopologia5.no4 typename "\"prova.src.Roteador\""
+par RedeTopologia5.no4 isStarter false
+scalar RedeTopologia5.no4 mensagens_enviadas 4
+scalar RedeTopologia5.no4 mensagens_recebidas 7
+scalar RedeTopologia5.no4 tempo_convergencia 0.015316387721
+scalar RedeTopologia5.no4 convergiu 1
+scalar RedeTopologia5.no4 destinos_conhecidos 8
+scalar RedeTopologia5.no4 fase_final 2
+scalar RedeTopologia5.no4 relogio_global_final 0.032109241561
+par RedeTopologia5.no5 typename "\"prova.src.Roteador\""
+par RedeTopologia5.no5 isStarter false
+scalar RedeTopologia5.no5 mensagens_enviadas 4
+scalar RedeTopologia5.no5 mensagens_recebidas 7
+scalar RedeTopologia5.no5 tempo_convergencia 0.01725987759
+scalar RedeTopologia5.no5 convergiu 1
+scalar RedeTopologia5.no5 destinos_conhecidos 8
+scalar RedeTopologia5.no5 fase_final 2
+scalar RedeTopologia5.no5 relogio_global_final 0.028377285489
+par RedeTopologia5.no6 typename "\"prova.src.Roteador\""
+par RedeTopologia5.no6 isStarter false
+scalar RedeTopologia5.no6 mensagens_enviadas 4
+scalar RedeTopologia5.no6 mensagens_recebidas 7
+scalar RedeTopologia5.no6 tempo_convergencia 0.019104956944
+scalar RedeTopologia5.no6 convergiu 1
+scalar RedeTopologia5.no6 destinos_conhecidos 8
+scalar RedeTopologia5.no6 fase_final 2
+scalar RedeTopologia5.no6 relogio_global_final 0.030377439354
+par RedeTopologia5.no7 typename "\"prova.src.Roteador\""
+par RedeTopologia5.no7 isStarter false
+scalar RedeTopologia5.no7 mensagens_enviadas 20
+scalar RedeTopologia5.no7 mensagens_recebidas 12
+scalar RedeTopologia5.no7 tempo_convergencia 0.013805970939
+scalar RedeTopologia5.no7 convergiu 1
+scalar RedeTopologia5.no7 destinos_conhecidos 8
+scalar RedeTopologia5.no7 fase_final 4
+scalar RedeTopologia5.no7 relogio_global_final 0.030241014778
+par RedeTopologia5 typename "\"prova.simulations.RedeTopologia5\""
+

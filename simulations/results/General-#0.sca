@@ -1,0 +1,126 @@
+version 3
+run General-0-20250812-18:03:32-10964
+attr configname General
+attr datetime 20250812-18:03:32
+attr datetimef 20250812-180332
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network prova.simulations.RedeTopologia1
+attr processid 10964
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network prova.simulations.RedeTopologia1
+config sim-time-limit 20s
+config **.vector-recording false
+config **.scalar-recording false
+config **.no0.isStarter true
+
+par RedeTopologia1.no0.portas$o[0].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no0.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia1.no0.portas$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no1.portas$o[0].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no1.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia1.no1.portas$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no1.portas$o[1].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no1.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia1.no1.portas$o[1].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no2.portas$o[0].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no2.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia1.no2.portas$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no2.portas$o[1].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no2.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia1.no2.portas$o[1].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no3.portas$o[0].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no3.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia1.no3.portas$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no3.portas$o[1].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no3.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia1.no3.portas$o[1].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no4.portas$o[0].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no4.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia1.no4.portas$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no4.portas$o[1].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no4.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia1.no4.portas$o[1].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no5.portas$o[0].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no5.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia1.no5.portas$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no5.portas$o[1].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no5.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia1.no5.portas$o[1].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no6.portas$o[0].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no6.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia1.no6.portas$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no6.portas$o[1].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no6.portas$o[1].channel disabled false
+attr mutable ""
+par RedeTopologia1.no6.portas$o[1].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no7.portas$o[0].channel typename "\"prova.simulations.CanalComCusto\""
+par RedeTopologia1.no7.portas$o[0].channel disabled false
+attr mutable ""
+par RedeTopologia1.no7.portas$o[0].channel delay 0s
+attr mutable ""
+attr unit s
+par RedeTopologia1.no0 typename "\"prova.src.Roteador\""
+par RedeTopologia1.no0 isStarter true
+par RedeTopologia1.no1 typename "\"prova.src.Roteador\""
+par RedeTopologia1.no1 isStarter false
+par RedeTopologia1.no2 typename "\"prova.src.Roteador\""
+par RedeTopologia1.no2 isStarter false
+par RedeTopologia1.no3 typename "\"prova.src.Roteador\""
+par RedeTopologia1.no3 isStarter false
+par RedeTopologia1.no4 typename "\"prova.src.Roteador\""
+par RedeTopologia1.no4 isStarter false
+par RedeTopologia1.no5 typename "\"prova.src.Roteador\""
+par RedeTopologia1.no5 isStarter false
+par RedeTopologia1.no6 typename "\"prova.src.Roteador\""
+par RedeTopologia1.no6 isStarter false
+par RedeTopologia1.no7 typename "\"prova.src.Roteador\""
+par RedeTopologia1.no7 isStarter false
+par RedeTopologia1 typename "\"prova.simulations.RedeTopologia1\""
+
