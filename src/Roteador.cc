@@ -6,15 +6,35 @@
 Define_Module(Roteador);
 
 int Roteador::extrairNumeroNo(const std::string& nomeNo) {
-    // Extrai o número do nome do nó (ex: "RedeTopologia1.no0" -> 0)
-    size_t pos = nomeNo.find_last_of('.');
-    if (pos != std::string::npos) {
-        std::string nomeModulo = nomeNo.substr(pos + 1);
-        if (nomeModulo.substr(0, 2) == "no") {
-            return std::stoi(nomeModulo.substr(2));
+    // Tenta diferentes estratégias para extrair o número
+    
+    // Estratégia 1: Procura por "no" seguido de número
+    size_t pos = nomeNo.find("no");
+    if (pos != std::string::npos && pos + 2 < nomeNo.length()) {
+        std::string numeroStr = nomeNo.substr(pos + 2);
+        // Remove caracteres não numéricos
+        std::string numeroLimpo;
+        for (char c : numeroStr) {
+            if (c >= '0' && c <= '9') {
+                numeroLimpo += c;
+            }
+        }
+        if (!numeroLimpo.empty()) {
+            return std::stoi(numeroLimpo);
         }
     }
-    return -1; // Erro
+    
+    // Estratégia 2: Procura por "." seguido de "no" e número
+    pos = nomeNo.find_last_of('.');
+    if (pos != std::string::npos && pos + 1 < nomeNo.length()) {
+        std::string nomeModulo = nomeNo.substr(pos + 1);
+        if (nomeModulo.substr(0, 2) == "no" && nomeModulo.length() > 2) {
+            std::string numeroStr = nomeModulo.substr(2);
+            return std::stoi(numeroStr);
+        }
+    }
+    
+    return -1;
 }
 
 void Roteador::initialize() {
@@ -36,6 +56,12 @@ void Roteador::initialize() {
     std::string nomeNo = getFullName();
     int numeroNo = extrairNumeroNo(nomeNo);
     
+    // Verifica se a extração funcionou
+    if (numeroNo == -1) {
+        EV << "ERRO CRÍTICO: Não foi possível extrair número do nó!" << endl;
+        return;
+    }
+    
     // Inicializa a tabela de roteamento com informação local
     tabelaRoteamento[numeroNo] = 0.0;
     proximosSaltos[numeroNo] = numeroNo;
@@ -55,11 +81,14 @@ void Roteador::initialize() {
             std::string nomeVizinho = vizinho->getFullName();
             int numeroVizinho = extrairNumeroNo(nomeVizinho);
             
-            // Adiciona informação do vizinho direto
-            tabelaRoteamento[numeroVizinho] = custo;
-            proximosSaltos[numeroVizinho] = numeroVizinho;
-            custoVizinhos[numeroVizinho] = custo;
-            destinosConhecidos.push_back(numeroVizinho);
+            // Verifica se a extração funcionou para o vizinho
+            if (numeroVizinho != -1) {
+                // Adiciona informação do vizinho direto
+                tabelaRoteamento[numeroVizinho] = custo;
+                proximosSaltos[numeroVizinho] = numeroVizinho;
+                custoVizinhos[numeroVizinho] = custo;
+                destinosConhecidos.push_back(numeroVizinho);
+            }
         }
     }
     
@@ -67,7 +96,7 @@ void Roteador::initialize() {
     
     // Apenas o nó inicial inicia a propagação de informação
     if (par("isStarter").boolValue()) {
-        EV << "Nó " << nomeNo << " (ID: " << meuId << ") iniciando propagação de informação (PI) com relógio global..." << endl;
+        EV << "Nó " << nomeNo << " iniciando propagação de informação (PI) com relógio global..." << endl;
         simtime_t delayInicial = uniform(0, 0.01);
         scheduleAt(simTime() + delayInicial, new cMessage("IniciarPI"));
     }
@@ -90,7 +119,7 @@ void Roteador::handleMessage(cMessage *msg) {
 }
 
 void Roteador::iniciarPropagacaoInformacao() {
-    EV << "Nó " << getFullName() << " (ID: " << meuId << ") iniciando propagação de informação para vizinhos" << endl;
+    EV << "Nó " << getFullName() << " iniciando propagação de informação para vizinhos" << endl;
     propagarInformacao();
 }
 
@@ -99,7 +128,7 @@ void Roteador::propagarInformacao() {
     relogioGlobal = simTime();
     faseAtual++;
     
-    EV << "Nó " << getFullName() << " (ID: " << meuId << ") - Fase " << faseAtual << " - Relógio Global: " << relogioGlobal << endl;
+    EV << "Nó " << getFullName() << " - Fase " << faseAtual << " - Relógio Global: " << relogioGlobal << endl;
     
     // Propaga a tabela de roteamento atual para todos os vizinhos
     for (int i = 0; i < gateSize("portas"); ++i) {
@@ -123,7 +152,7 @@ void Roteador::propagarInformacao() {
         registrarMensagemEnviada();
     }
     
-    EV << "Nó " << getFullName() << " (ID: " << meuId << ") propagou informação de roteamento para " 
+    EV << "Nó " << getFullName() << " propagou informação de roteamento para " 
        << gateSize("portas") << " vizinhos na fase " << faseAtual << endl;
 }
 
@@ -137,7 +166,7 @@ void Roteador::processarInformacaoRecebida(Mensagem *msg) {
         relogioGlobal = tempoChegada;
     }
     
-    EV << "Nó " << getFullName() << " (ID: " << meuId << ") recebeu mensagem de no" << numeroVizinho 
+    EV << "Nó " << getFullName() << " recebeu mensagem de no" << numeroVizinho 
        << " no tempo " << tempoChegada << " (Relógio Global: " << relogioGlobal << ")" << endl;
     
     // Reconstrói a tabela do vizinho
@@ -159,7 +188,7 @@ void Roteador::processarInformacaoRecebida(Mensagem *msg) {
         if (tabelaRoteamento.find(destino) == tabelaRoteamento.end() || 
             novoCusto < tabelaRoteamento[destino]) {
             
-            EV << "Nó " << getFullName() << " (ID: " << meuId << ") atualizou rota para no" << destino 
+            EV << "Nó " << getFullName() << " atualizou rota para no" << destino 
                << " via no" << numeroVizinho << " (custo: " << novoCusto << ") na fase " << faseAtual << endl;
             
             tabelaRoteamento[destino] = novoCusto;
@@ -196,14 +225,14 @@ void Roteador::verificarConvergencia() {
     if (tabelaRoteamento.size() >= totalNos && !convergiu) {
         convergiu = true;
         tempoConvergencia = simTime() - tempoInicial;
-        EV << "Nó " << getFullName() << " (ID: " << meuId << ") CONVERGIU em " << tempoConvergencia << "s" << endl;
+        EV << "Nó " << getFullName() << " CONVERGIU em " << tempoConvergencia << "s" << endl;
         
         verificarConsistenciaRoteamento();
     }
 }
 
 void Roteador::imprimirTabelaRoteamento(const char* motivo) {
-    EV << "=== Tabela de Roteamento do Nó " << getFullName() << " (ID: " << meuId << ") (" << motivo << ") ===" << endl;
+    EV << "=== Tabela de Roteamento do Nó " << getFullName() << " (" << motivo << ") ===" << endl;
     for (std::map<int, double>::const_iterator it = tabelaRoteamento.begin(); 
          it != tabelaRoteamento.end(); ++it) {
         int destino = it->first;
@@ -216,16 +245,16 @@ void Roteador::imprimirTabelaRoteamento(const char* motivo) {
 
 void Roteador::registrarMensagemEnviada() {
     totalMensagensEnviadas++;
-    EV << "Nó " << getFullName() << " (ID: " << meuId << ") enviou mensagem #" << totalMensagensEnviadas << endl;
+    EV << "Nó " << getFullName() << " enviou mensagem #" << totalMensagensEnviadas << endl;
 }
 
 void Roteador::registrarMensagemRecebida() {
     totalMensagensRecebidas++;
-    EV << "Nó " << getFullName() << " (ID: " << meuId << ") recebeu mensagem #" << totalMensagensRecebidas << endl;
+    EV << "Nó " << getFullName() << " recebeu mensagem #" << totalMensagensRecebidas << endl;
 }
 
 void Roteador::verificarConsistenciaRoteamento() {
-    EV << "=== Verificação de Consistência - Nó " << getFullName() << " (ID: " << meuId << ") ===" << endl;
+    EV << "=== Verificação de Consistência - Nó " << getFullName() << " ===" << endl;
     
     // Verifica se todos os caminhos são consistentes
     for (std::map<int, double>::const_iterator it = tabelaRoteamento.begin(); 
@@ -248,7 +277,7 @@ void Roteador::verificarConsistenciaRoteamento() {
 
 void Roteador::finish() {
     // Coleta estatísticas finais
-    EV << "=== ESTATÍSTICAS FINAIS - Nó " << getFullName() << " (ID: " << meuId << ") ===" << endl;
+    EV << "=== ESTATÍSTICAS FINAIS - Nó " << getFullName() << " ===" << endl;
     EV << "Total de mensagens enviadas: " << totalMensagensEnviadas << endl;
     EV << "Total de mensagens recebidas: " << totalMensagensRecebidas << endl;
     EV << "Tempo de convergência: " << tempoConvergencia << "s" << endl;

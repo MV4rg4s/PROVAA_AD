@@ -1,8 +1,8 @@
 version 3
-run topologia1-0-20250812-20:33:19-5272
+run topologia1-0-20250812-21:23:03-19504
 attr configname topologia1
-attr datetime 20250812-20:33:19
-attr datetimef 20250812-203319
+attr datetime 20250812-21:23:03
+attr datetimef 20250812-212303
 attr experiment topologia1
 attr inifile omnetpp.ini
 attr iterationvars ""
@@ -10,7 +10,7 @@ attr iterationvarsd ""
 attr iterationvarsf ""
 attr measurement ""
 attr network prova.simulations.RedeTopologia1
-attr processid 5272
+attr processid 19504
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -22,6 +22,7 @@ config sim-time-limit 30s
 config **.vector-recording true
 config **.scalar-recording true
 config **.no0.isStarter true
+config network prova.simulations.RedeTopologia1
 
 par RedeTopologia1.no0.portas$o[0].channel typename "\"prova.simulations.CanalComCusto\""
 par RedeTopologia1.no0.portas$o[0].channel disabled false
@@ -121,75 +122,75 @@ attr mutable ""
 attr unit s
 par RedeTopologia1.no0 typename "\"prova.src.Roteador\""
 par RedeTopologia1.no0 isStarter true
-scalar RedeTopologia1.no0 mensagens_enviadas 2
-scalar RedeTopologia1.no0 mensagens_recebidas 0
-scalar RedeTopologia1.no0 tempo_convergencia 0
-scalar RedeTopologia1.no0 convergiu 0
-scalar RedeTopologia1.no0 destinos_conhecidos 3
-scalar RedeTopologia1.no0 fase_final 1
-scalar RedeTopologia1.no0 relogio_global_final 0.009636627641
+scalar RedeTopologia1.no0 mensagens_enviadas 12
+scalar RedeTopologia1.no0 mensagens_recebidas 11
+scalar RedeTopologia1.no0 tempo_convergencia 0.025800145796
+scalar RedeTopologia1.no0 convergiu 1
+scalar RedeTopologia1.no0 destinos_conhecidos 8
+scalar RedeTopologia1.no0 fase_final 6
+scalar RedeTopologia1.no0 relogio_global_final 0.030005511242
 par RedeTopologia1.no1 typename "\"prova.src.Roteador\""
 par RedeTopologia1.no1 isStarter false
-scalar RedeTopologia1.no1 mensagens_enviadas 0
-scalar RedeTopologia1.no1 mensagens_recebidas 0
-scalar RedeTopologia1.no1 tempo_convergencia 0
-scalar RedeTopologia1.no1 convergiu 0
-scalar RedeTopologia1.no1 destinos_conhecidos 3
-scalar RedeTopologia1.no1 fase_final 0
-scalar RedeTopologia1.no1 relogio_global_final 0
+scalar RedeTopologia1.no1 mensagens_enviadas 8
+scalar RedeTopologia1.no1 mensagens_recebidas 7
+scalar RedeTopologia1.no1 tempo_convergencia 0.023331966291
+scalar RedeTopologia1.no1 convergiu 1
+scalar RedeTopologia1.no1 destinos_conhecidos 8
+scalar RedeTopologia1.no1 fase_final 4
+scalar RedeTopologia1.no1 relogio_global_final 0.028489128541
 par RedeTopologia1.no2 typename "\"prova.src.Roteador\""
 par RedeTopologia1.no2 isStarter false
-scalar RedeTopologia1.no2 mensagens_enviadas 0
-scalar RedeTopologia1.no2 mensagens_recebidas 1
-scalar RedeTopologia1.no2 tempo_convergencia 0
-scalar RedeTopologia1.no2 convergiu 0
-scalar RedeTopologia1.no2 destinos_conhecidos 3
-scalar RedeTopologia1.no2 fase_final 0
-scalar RedeTopologia1.no2 relogio_global_final 0.012283068148
+scalar RedeTopologia1.no2 mensagens_enviadas 10
+scalar RedeTopologia1.no2 mensagens_recebidas 10
+scalar RedeTopologia1.no2 tempo_convergencia 0.025343560446
+scalar RedeTopologia1.no2 convergiu 1
+scalar RedeTopologia1.no2 destinos_conhecidos 8
+scalar RedeTopologia1.no2 fase_final 5
+scalar RedeTopologia1.no2 relogio_global_final 0.028446586303
 par RedeTopologia1.no3 typename "\"prova.src.Roteador\""
 par RedeTopologia1.no3 isStarter false
-scalar RedeTopologia1.no3 mensagens_enviadas 0
-scalar RedeTopologia1.no3 mensagens_recebidas 0
-scalar RedeTopologia1.no3 tempo_convergencia 0
-scalar RedeTopologia1.no3 convergiu 0
-scalar RedeTopologia1.no3 destinos_conhecidos 3
-scalar RedeTopologia1.no3 fase_final 0
-scalar RedeTopologia1.no3 relogio_global_final 0
+scalar RedeTopologia1.no3 mensagens_enviadas 4
+scalar RedeTopologia1.no3 mensagens_recebidas 6
+scalar RedeTopologia1.no3 tempo_convergencia 0.019758129431
+scalar RedeTopologia1.no3 convergiu 1
+scalar RedeTopologia1.no3 destinos_conhecidos 8
+scalar RedeTopologia1.no3 fase_final 2
+scalar RedeTopologia1.no3 relogio_global_final 0.026140256402
 par RedeTopologia1.no4 typename "\"prova.src.Roteador\""
 par RedeTopologia1.no4 isStarter false
-scalar RedeTopologia1.no4 mensagens_enviadas 0
-scalar RedeTopologia1.no4 mensagens_recebidas 1
-scalar RedeTopologia1.no4 tempo_convergencia 0
-scalar RedeTopologia1.no4 convergiu 0
-scalar RedeTopologia1.no4 destinos_conhecidos 3
-scalar RedeTopologia1.no4 fase_final 0
-scalar RedeTopologia1.no4 relogio_global_final 0.012271277173
+scalar RedeTopologia1.no4 mensagens_enviadas 12
+scalar RedeTopologia1.no4 mensagens_recebidas 11
+scalar RedeTopologia1.no4 tempo_convergencia 0.024374616856
+scalar RedeTopologia1.no4 convergiu 1
+scalar RedeTopologia1.no4 destinos_conhecidos 8
+scalar RedeTopologia1.no4 fase_final 6
+scalar RedeTopologia1.no4 relogio_global_final 0.030033380423
 par RedeTopologia1.no5 typename "\"prova.src.Roteador\""
 par RedeTopologia1.no5 isStarter false
-scalar RedeTopologia1.no5 mensagens_enviadas 0
-scalar RedeTopologia1.no5 mensagens_recebidas 0
-scalar RedeTopologia1.no5 tempo_convergencia 0
-scalar RedeTopologia1.no5 convergiu 0
-scalar RedeTopologia1.no5 destinos_conhecidos 3
-scalar RedeTopologia1.no5 fase_final 0
-scalar RedeTopologia1.no5 relogio_global_final 0
+scalar RedeTopologia1.no5 mensagens_enviadas 4
+scalar RedeTopologia1.no5 mensagens_recebidas 6
+scalar RedeTopologia1.no5 tempo_convergencia 0.021174608699
+scalar RedeTopologia1.no5 convergiu 1
+scalar RedeTopologia1.no5 destinos_conhecidos 8
+scalar RedeTopologia1.no5 fase_final 2
+scalar RedeTopologia1.no5 relogio_global_final 0.025379974145
 par RedeTopologia1.no6 typename "\"prova.src.Roteador\""
 par RedeTopologia1.no6 isStarter false
-scalar RedeTopologia1.no6 mensagens_enviadas 0
-scalar RedeTopologia1.no6 mensagens_recebidas 0
-scalar RedeTopologia1.no6 tempo_convergencia 0
-scalar RedeTopologia1.no6 convergiu 0
-scalar RedeTopologia1.no6 destinos_conhecidos 3
-scalar RedeTopologia1.no6 fase_final 0
-scalar RedeTopologia1.no6 relogio_global_final 0
+scalar RedeTopologia1.no6 mensagens_enviadas 8
+scalar RedeTopologia1.no6 mensagens_recebidas 7
+scalar RedeTopologia1.no6 tempo_convergencia 0.021137354846
+scalar RedeTopologia1.no6 convergiu 1
+scalar RedeTopologia1.no6 destinos_conhecidos 8
+scalar RedeTopologia1.no6 fase_final 4
+scalar RedeTopologia1.no6 relogio_global_final 0.028332828261
 par RedeTopologia1.no7 typename "\"prova.src.Roteador\""
 par RedeTopologia1.no7 isStarter false
-scalar RedeTopologia1.no7 mensagens_enviadas 0
-scalar RedeTopologia1.no7 mensagens_recebidas 0
-scalar RedeTopologia1.no7 tempo_convergencia 0
-scalar RedeTopologia1.no7 convergiu 0
-scalar RedeTopologia1.no7 destinos_conhecidos 3
-scalar RedeTopologia1.no7 fase_final 0
-scalar RedeTopologia1.no7 relogio_global_final 0
+scalar RedeTopologia1.no7 mensagens_enviadas 10
+scalar RedeTopologia1.no7 mensagens_recebidas 10
+scalar RedeTopologia1.no7 tempo_convergencia 0.023593064941
+scalar RedeTopologia1.no7 convergiu 1
+scalar RedeTopologia1.no7 destinos_conhecidos 8
+scalar RedeTopologia1.no7 fase_final 5
+scalar RedeTopologia1.no7 relogio_global_final 0.02873472042
 par RedeTopologia1 typename "\"prova.simulations.RedeTopologia1\""
 
